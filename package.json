@@ -1,0 +1,25 @@
+{
+  "name": "fastify-mikro-postgres",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/pratyakash/fastify-mikro-postgres.git",
+  "author": "<pratyakash13@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^9.0.1",
+    "@fastify/jwt": "^8.0.1",
+    "dotenv": "^16.4.5",
+    "fastify": "^4.27.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsnd --respawn --transpile-only --exit-child src/server.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "nodemon": "^3.1.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  }
+}
