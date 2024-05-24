@@ -1,0 +1,11 @@
+services:
+  frontend:
+    image: 'fastify-mikro/fe'
+    deploy:
+      resources:
+        limits:
+          memory: 150M
+    restart: on-failure
+    build:
+      dockerfile: Dockerfile
+      context: .

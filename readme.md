@@ -33,6 +33,12 @@ yarn build
 yarn start
 ```
 
+### Docker Compose
+To start the docker 
+```sh
+docker-compose up --build -d
+```
+
 ### Migrations
 To create the MikroORM Migrations:
 ```sh
@@ -43,3 +49,4 @@ To run the MikroORM Migrations:
 ```sh
 yarn up-migration
 ```
+
