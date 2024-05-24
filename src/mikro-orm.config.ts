@@ -27,6 +27,8 @@ if (
   };
 }
 
+console.log('===> ENV ');
+
 export default defineConfig({
   driver: PostgreSqlDriver,
   dbName: ENV_VARS.DATABASE_NAME,

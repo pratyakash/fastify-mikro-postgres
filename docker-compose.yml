@@ -5,13 +5,11 @@ services:
       resources:
         limits:
           memory: 100M
-    environment:
-      - POSTGRES_PASSWORD=postgres_password
     volumes:
       - pg_data:/var/lib/postgresql/data
 
-  frontend:
-    image: 'fastify-mikro/fe'
+  backend:
+    image: 'fastify-mikro/be'
     deploy:
       resources:
         limits:
@@ -20,6 +18,14 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_HOST=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres_password
 volumes:
   pg_data:
     driver: local

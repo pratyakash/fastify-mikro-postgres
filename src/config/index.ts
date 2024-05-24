@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 export const ENV_VARS = {
-  PORT: process.env.PORT ?? 300,
+  PORT: process.env.PORT ?? 3000,
   JWT_SECRET: process.env.JWT_SECRET ?? '',
   DATABASE_HOST: process.env.DATABASE_HOST ?? '',
   DATABASE_NAME: process.env.DATABASE_NAME ?? '',
