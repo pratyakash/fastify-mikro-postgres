@@ -4,8 +4,6 @@ WORKDIR /opt/app
 
 COPY yarn.lock package.json example.env ./
 
-RUN yarn global add typescript
-
 # Install prod dependencies
 RUN yarn install --production && \
     # Cache prod dependencies
@@ -17,8 +15,11 @@ FROM node:20.12.0-alpine AS builder
 WORKDIR /opt/app
 COPY . .
 COPY --from=deps /opt/app/node_modules ./node_modules
-RUN yarn build && \
-    rm -rf node_modules
+RUN yarn global add typescript
+
+RUN tsc
+RUN node ./node_modules/.bin/mikro-orm-esm cache:generate --combined 
+RUN rm -rf node_modules
 
 FROM node:20.12.0-alpine AS runner
 
