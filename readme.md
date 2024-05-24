@@ -32,3 +32,14 @@ To build and start the project in production mode:
 yarn build
 yarn start
 ```
+
+### Migrations
+To create the MikroORM Migrations:
+```sh
+npx mikro-orm migration:create
+```
+
+To run the MikroORM Migrations:
+```sh
+npx mikro-orm migration:up
+```
