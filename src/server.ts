@@ -4,10 +4,12 @@ import { server, main } from './app';
 
 const start = async () => {
   try {
+    const PORT = Number(process.env.PORT) ?? 3000;
+
     await main();
     await server.ready();
-    await server.listen({ port: 3000 });
-    console.log(`Server is running at http://localhost:3000`);
+    await server.listen({ port: PORT });
+    console.log(`Server is running at http://localhost:${PORT}`);
   } catch (err) {
     console.log(err);
     server.log.error(err);
