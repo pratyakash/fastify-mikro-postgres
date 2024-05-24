@@ -33,7 +33,9 @@
     "start": "node dist/server.js",
     "dev": "tsnd --respawn --transpile-only --exit-child src/server.ts",
     "prepare": "husky",
-    "type-check": "tsc --pretty --noEmit"
+    "type-check": "tsc --pretty --noEmit",
+    "create-migration":"mikro-orm migration:create",
+    "up-migration":"mikro-orm migration:up"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",

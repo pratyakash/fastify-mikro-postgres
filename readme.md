@@ -36,10 +36,10 @@ yarn start
 ### Migrations
 To create the MikroORM Migrations:
 ```sh
-npx mikro-orm migration:create
+yarn create-migration
 ```
 
 To run the MikroORM Migrations:
 ```sh
-npx mikro-orm migration:up
+yarn up-migration
 ```
