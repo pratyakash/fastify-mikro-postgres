@@ -27,7 +27,7 @@ yarn dev
 ```
 
 ### Production
-To run the project in development mode with automatic reloading:
+To build and start the project in production mode:
 ```sh
 yarn build
 yarn start
