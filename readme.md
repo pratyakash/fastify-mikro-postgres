@@ -32,3 +32,9 @@ To build and start the project in production mode:
 yarn build
 yarn start
 ```
+
+### Docker Compose
+To start the docker 
+```sh
+docker-compose up --build -d
+```
