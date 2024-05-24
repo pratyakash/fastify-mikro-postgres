@@ -4,6 +4,8 @@
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
+    "declaration": true,
+    "declarationDir": "./dist",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
@@ -11,6 +13,11 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["src/**/*", "global.d.ts", "src/migrations/*"],
+  "include": [
+    "src/**/*",
+    "global.d.ts",
+    "src/migrations/*",
+    "src/mikro-orm.config.ts"
+  ],
   "exclude": ["node_modules"]
 }

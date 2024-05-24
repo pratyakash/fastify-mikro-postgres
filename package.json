@@ -29,8 +29,8 @@
     ]
   },
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/server.js",
+    "build": "tsc && npx mikro-orm-esm cache:generate --combined",
+    "start": "NODE_DEBUG=net,http node --inspect dist/server.js",
     "dev": "tsnd --respawn --transpile-only --exit-child src/server.ts",
     "prepare": "husky",
     "type-check": "tsc --pretty --noEmit",

@@ -5,7 +5,7 @@ import {
   EntityRepository,
 } from '@mikro-orm/postgresql';
 
-import { User } from '../src/entities/user/user.entity';
+import { User } from './entities/user/user.entity';
 
 import config from './mikro-orm.config';
 
