@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "\n ** Checking Commit Message ** \n"
+
+npx --no -- commitlint --color --edit ${1}

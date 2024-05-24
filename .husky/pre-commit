@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "* Pre Commit Checks *"
+
+echo "\n 1. Checking ESLint \n"
+
+yarn lint-staged
+
+echo "\n 2. Checking Types \n"
+
+yarn run type-check
