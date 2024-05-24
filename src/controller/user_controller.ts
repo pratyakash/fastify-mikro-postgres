@@ -2,7 +2,10 @@ import { FastifyRequest, FastifyReply } from 'fastify';
 import { send_reply } from '../utils/response.helper';
 import { init_ORM } from '../db';
 
-export const login = async (request: FastifyRequest, reply: FastifyReply) => {
+export const register = async (
+  request: FastifyRequest,
+  reply: FastifyReply
+) => {
   const db = await init_ORM();
 
   const dummy_user = {

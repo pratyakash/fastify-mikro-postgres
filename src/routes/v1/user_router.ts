@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify';
 
-import { login } from '../../controller/user_controller';
+import { register } from '../../controller/user_controller';
 
 import { verify_JWT_and_attach_user } from '../../middleware/verify_jwt';
 
@@ -9,8 +9,8 @@ const user_router = async (fastify: FastifyInstance) => {
     await verify_JWT_and_attach_user(request, reply);
   });
 
-  fastify.post('/login', async (request, reply) => {
-    await login(request, reply);
+  fastify.post('/register', async (request, reply) => {
+    await register(request, reply);
   });
 };
 
