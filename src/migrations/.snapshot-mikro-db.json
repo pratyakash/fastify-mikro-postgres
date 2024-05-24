@@ -61,6 +61,16 @@
           "primary": false,
           "nullable": false,
           "mappedType": "string"
+        },
+        "is_active": {
+          "name": "is_active",
+          "type": "boolean",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "default": "true",
+          "mappedType": "boolean"
         }
       },
       "name": "user",

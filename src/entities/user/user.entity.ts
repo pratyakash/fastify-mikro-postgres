@@ -11,4 +11,7 @@ export class User extends BaseEntity {
 
   @Property()
   email!: string;
+
+  @Property()
+  is_active?: boolean = true;
 }

@@ -27,8 +27,6 @@ if (
   };
 }
 
-console.log('===> ENV ');
-
 export default defineConfig({
   driver: PostgreSqlDriver,
   dbName: ENV_VARS.DATABASE_NAME,
@@ -38,6 +36,10 @@ export default defineConfig({
   port: ENV_VARS.DATABASE_PORT,
   entities: ['dist/**/*.entity.js'],
   entitiesTs: ['src/**/*.entity.ts'],
+  migrations: {
+    path: 'dist/migrations',
+    pathTs: 'src/migrations',
+  },
   debug: true,
   dynamicImportProvider: (id) => import(id),
   extensions: [Migrator],
