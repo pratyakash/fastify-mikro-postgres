@@ -1,6 +1,6 @@
 services:
-  frontend:
-    image: 'fastify-mikro/fe'
+  backend:
+    image: 'fastify-mikro/be'
     deploy:
       resources:
         limits:
