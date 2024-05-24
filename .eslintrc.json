@@ -5,7 +5,7 @@
     "eslint-config-prettier"
   ],
   "plugins": ["eslint-plugin-prettier"],
-  "parserOptions": { "ecmaVersion": 2018, "sourceType": "module" },
+  "parserOptions": { "ecmaVersion": "2018", "sourceType": "module" },
   "rules": {
     "prettier/prettier": "error",
     "spaced-comment": "off",
