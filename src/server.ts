@@ -1,10 +1,11 @@
 import 'dotenv/config';
 
 import { server, main } from './app';
+import { ENV_VARS } from './config';
 
 const start = async () => {
   try {
-    const PORT = Number(process.env.PORT) ?? 3000;
+    const PORT = Number(ENV_VARS.PORT) ?? 3000;
 
     await main();
     await server.ready();

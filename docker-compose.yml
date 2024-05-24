@@ -1,4 +1,15 @@
 services:
+  postgres:
+    image: 'postgres:15.6-alpine3.19'
+    deploy:
+      resources:
+        limits:
+          memory: 100M
+    environment:
+      - POSTGRES_PASSWORD=postgres_password
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
   frontend:
     image: 'fastify-mikro/fe'
     deploy:
@@ -9,3 +20,6 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
+volumes:
+  pg_data:
+    driver: local

@@ -2,7 +2,7 @@ FROM node:20.12.0-alpine AS deps
 
 WORKDIR /opt/app
 
-COPY yarn.lock package.json example.env ./
+COPY yarn.lock package.json ./
 
 # Install prod dependencies
 RUN yarn install --production && \
@@ -15,6 +15,7 @@ FROM node:20.12.0-alpine AS builder
 WORKDIR /opt/app
 COPY . .
 COPY --from=deps /opt/app/node_modules ./node_modules
+COPY --from=deps /opt/app/.env ./.env
 RUN yarn global add typescript
 
 RUN tsc

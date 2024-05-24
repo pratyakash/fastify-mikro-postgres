@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { existsSync, readFileSync } from 'node:fs';
 import {
   defineConfig,
@@ -7,6 +8,7 @@ import {
 } from '@mikro-orm/postgresql';
 import { Migrator } from '@mikro-orm/migrations';
 import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
+import { ENV_VARS } from './config';
 
 const options = {} as Options;
 
@@ -27,7 +29,11 @@ if (
 
 export default defineConfig({
   driver: PostgreSqlDriver,
-  dbName: 'mikro-db',
+  dbName: ENV_VARS.DATABASE_NAME,
+  user: ENV_VARS.DATABASE_USER,
+  password: ENV_VARS.DATABASE_PASSWORD,
+  host: ENV_VARS.DATABASE_HOST,
+  port: ENV_VARS.DATABASE_PORT,
   entities: ['dist/**/*.entity.js'],
   entitiesTs: ['src/**/*.entity.ts'],
   debug: true,
